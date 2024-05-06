@@ -12,8 +12,10 @@ const ENV = (process.env.CLUSTER) || "mainnet-beta";
 // index.js
 const main = async () => {
   try {
+      console.log('Inside main');
       // Setup Solana RPC connection    
       const connection = new Connection(SOLANA_RPC_ENDPOINT);
+      console.log(connection);
       // Fetch token list from Jupiter API
       // This token list contains token meta data
       const tokens: Token[] = await (await fetch(TOKEN_LIST_URL[ENV])).json();    
